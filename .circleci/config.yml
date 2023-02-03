@@ -1,0 +1,29 @@
+version: 2.1
+
+jobs:
+ 
+  insalling_apache_EC2_ansible:
+    docker:
+        - image: python:3.7-alpine3.11
+
+    steps:
+      - checkout
+      - add_ssh_keys:
+             fingerprints: 
+              - ""
+
+      - run:
+          name: Install Ansible
+          command: |
+            apk add --update ansible
+
+      - run:
+          name: Run Playbook and Configure server
+          command: |
+            cd ~/project/.circleci/ansible
+            ansible-playbook main-remote.yml -i ~/project/.circleci/ansible/inventory.txt            
+workflows:
+  Insalling_Apache_EC2_Ansible-workflow:
+    jobs:
+      - insalling_apache_EC2_ansible
+      
