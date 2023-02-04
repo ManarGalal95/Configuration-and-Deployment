@@ -4,7 +4,7 @@ jobs:
  
   insalling_apache_EC2_ansible:
     docker:
-        - image: python:3.7-alpine3.11
+        - image: ansible/centos7-ansible
 
     steps:
       - checkout
@@ -13,10 +13,10 @@ jobs:
                - "97:04:69:85:95:fd:6f:81:34:b6:98:c2:4a:8c:66:63"
               #- "7e:21:64:03:08:9d:2b:6d:ab:d3:a0:69:ec:c9:f1:2c"
 
-      - run:
-          name: Install Ansible
-          command: |
-            apk add --update ansible
+      # - run:
+      #     name: Install Ansible
+      #     command: |
+      #       apk add --update ansible
 
       - run:
           name: Run Playbook and Configure server
