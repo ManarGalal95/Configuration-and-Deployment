@@ -14,12 +14,12 @@ jobs:
       - add_ssh_keys:
               fingerprints: ["7e:21:64:03:08:9d:2b:6d:ab:d3:a0:69:ec:c9:f1:2c"] 
 
-      - deploy:
-          name: Deploy to staging if branch is develop
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "develop" ]; then
-              eval `ssh-agent` && ssh-add ~/.ssh/id_rsa* && bundle exec cap staging deploy
-            fi
+      # - deploy:
+      #     name: Deploy to staging if branch is develop
+      #     command: |
+      #       if [ "${CIRCLE_BRANCH}" == "develop" ]; then
+      #         eval `ssh-agent` && ssh-add ~/.ssh/id_rsa* && bundle exec cap staging deploy
+      #       fi
 
       - run:
           name: Install Ansible
