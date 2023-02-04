@@ -12,7 +12,7 @@ jobs:
       #        fingerprints: 
       #         - "7e:21:64:03:08:9d:2b:6d:ab:d3:a0:69:ec:c9:f1:2c"
       - add_ssh_keys:
-              fingerprints: ["1b:b3:dc:23:35:97:25:67:6c:72:93:49:51:ef:e6:63"] 
+              fingerprints: ["7e:21:64:03:08:9d:2b:6d:ab:d3:a0:69:ec:c9:f1:2c"] 
 
       - run:
           name: Install Ansible
